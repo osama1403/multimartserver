@@ -177,13 +177,17 @@ const addProduct = (req, res) => {
       // console.log('files: '+req.method+req.get('Content-Type'));
       // console.log(req.body);
       try {
-        const vercelUploads = images.map(el => put(el.fileName, el.fileBuffer, {
-          access: 'public',
-        }))
+        const vercelUploads = images.map(el => {
+          return (put(el.fileName, el.fileBuffer, {
+            access: 'public',
+          })
+          )
+        }
+        )
 
-        const blobs = await Promise.all(vercelUploads)  
-        const imagesUrls = blobs.map(el=>el.url)
-        
+        const blobs = await Promise.all(vercelUploads)
+        const imagesUrls = blobs.map(el => el.url)
+
         const now = new Date()
         const isCreated = await Product.create({ owner, name, price, stock, specifications, description, categories, customizations, imagesUrls, date: now })
         if (isCreated) {

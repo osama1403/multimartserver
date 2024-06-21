@@ -170,7 +170,7 @@ const addProduct = (req, res) => {
       const images = req.files?.map(el => {
         return {
           fileBuffer: el.buffer,
-          fileName: path.parse(el.originalname).name + '-' + Date.now() + '-' + Math.round(Math.random() * 1E9) + path.extname(originalname)
+          fileName: path.parse(el.originalname).name + '-' + Date.now() + '-' + Math.round(Math.random() * 1E9) + path.extname(el.originalname)
         }
       })
 

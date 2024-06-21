@@ -22,7 +22,7 @@
         },
         {
           "key": "Access-Control-Allow-Origin",
-          "value": "*"
+          "value": "https://multimart-7pxm.onrender.com/"
         },
         {
           "key": "Access-Control-Allow-Methods",

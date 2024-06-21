@@ -124,7 +124,7 @@ const getSingleProduct = async (req, res) => {
 }
 
 
-const addProduct = (req, res) => {
+const addProduct = async (req, res) => {
   try {
     const upload = multerInstance.array('images', 4)
     upload(req, res, async (err) => {

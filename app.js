@@ -17,10 +17,11 @@ require('dotenv').config();
 // app.use(express.json());
 // app.use(express.static('./images'))
 // app.use(express.static(path.join(__dirname, 'build')));
-app.use(cors({
-  origin: process.env.FRONTEND_URL,
-  credentials: true
-}))
+
+// app.use(cors({
+//   origin: process.env.FRONTEND_URL,
+//   credentials: true
+// }))
 
 connectDB()
 

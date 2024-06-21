@@ -189,7 +189,7 @@ const addProduct = async (req, res) => {
         const imagesUrls = blobs.map(el => el.url)
 
         const now = new Date()
-        const isCreated = await Product.create({ owner, name, price, stock, specifications, description, categories, customizations, imagesUrls, date: now })
+        const isCreated = await Product.create({ owner, name, price, stock, specifications, description, categories, customizations, images:imagesUrls, date: now })
         if (isCreated) {
           res.json({ success: true, msg: 'product added successfully' })
           return
